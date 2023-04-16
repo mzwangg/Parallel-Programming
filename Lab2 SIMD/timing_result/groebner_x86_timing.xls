@@ -1,0 +1,170 @@
+1_130_22_8	serialGroebner	1.10E-05				serialGroebner	sseGroebner	avx2Groebner				
+1_130_22_8	serialGroebner	9.00E-06			1_130_22_8	0.0000234	0.0000094	0.0000088				
+1_130_22_8	serialGroebner	8.00E-06			2_254_106_53	0.000073	0.0000356	0.000067				
+1_130_22_8	serialGroebner	8.00E-05			3_562_170_53	0.0001344	0.0000584	0.0000416				
+1_130_22_8	serialGroebner	9.00E-06	0.0000234		4_1011_539_263	0.0034692	0.0014638	0.0008916				
+1_130_22_8	sseGroebner	9.00E-06			5_2362_1226_453	0.0273148	0.0086432	0.0053374				
+1_130_22_8	sseGroebner	1.20E-05			6_3799_2759_1953	0.4707198	0.242605	0.1513658				
+1_130_22_8	sseGroebner	9.00E-06			7_8399_6375_4535	6.672738	4.664422	2.559356				
+1_130_22_8	sseGroebner	8.00E-06			8_23045_18748_14325	132.1986	72.51568	43.94				
+1_130_22_8	sseGroebner	9.00E-06	0.0000094		9_37960_29304_14921	314.2274	159.4358	108.4118				
+1_130_22_8	avx2Groebner	8.00E-06			10_43577_39477_54274	1091.938	676.7686	503.877				
+1_130_22_8	avx2Groebner	9.00E-06			11_85401_5724_756	0.3109462	1.72735	0.5273				
+1_130_22_8	avx2Groebner	9.00E-06										
+1_130_22_8	avx2Groebner	9.00E-06										
+1_130_22_8	avx2Groebner	9.00E-06	0.0000088									
+2_254_106_53	serialGroebner	7.50E-05										
+2_254_106_53	serialGroebner	7.40E-05										
+2_254_106_53	serialGroebner	7.40E-05										
+2_254_106_53	serialGroebner	7.10E-05										
+2_254_106_53	serialGroebner	7.10E-05	0.000073									
+2_254_106_53	sseGroebner	3.60E-05										
+2_254_106_53	sseGroebner	3.50E-05										
+2_254_106_53	sseGroebner	3.50E-05										
+2_254_106_53	sseGroebner	3.80E-05										
+2_254_106_53	sseGroebner	3.40E-05	0.0000356									
+2_254_106_53	avx2Groebner	9.70E-05										
+2_254_106_53	avx2Groebner	6.10E-05										
+2_254_106_53	avx2Groebner	6.00E-05										
+2_254_106_53	avx2Groebner	5.90E-05										
+2_254_106_53	avx2Groebner	5.80E-05	0.000067									
+3_562_170_53	serialGroebner	0.00013										
+3_562_170_53	serialGroebner	0.000127										
+3_562_170_53	serialGroebner	0.000127										
+3_562_170_53	serialGroebner	0.000128										
+3_562_170_53	serialGroebner	0.00016	0.0001344									
+3_562_170_53	sseGroebner	5.90E-05										
+3_562_170_53	sseGroebner	6.30E-05										
+3_562_170_53	sseGroebner	5.60E-05										
+3_562_170_53	sseGroebner	5.70E-05										
+3_562_170_53	sseGroebner	5.70E-05	0.0000584									
+3_562_170_53	avx2Groebner	4.10E-05										
+3_562_170_53	avx2Groebner	4.20E-05										
+3_562_170_53	avx2Groebner	4.20E-05										
+3_562_170_53	avx2Groebner	4.10E-05										
+3_562_170_53	avx2Groebner	4.20E-05	0.0000416									
+4_1011_539_263	serialGroebner	0.00344										
+4_1011_539_263	serialGroebner	0.003425										
+4_1011_539_263	serialGroebner	0.003311										
+4_1011_539_263	serialGroebner	0.003884										
+4_1011_539_263	serialGroebner	0.003286	0.0034692									
+4_1011_539_263	sseGroebner	0.001506										
+4_1011_539_263	sseGroebner	0.001554										
+4_1011_539_263	sseGroebner	0.00147										
+4_1011_539_263	sseGroebner	0.001388										
+4_1011_539_263	sseGroebner	0.001401	0.0014638									
+4_1011_539_263	avx2Groebner	0.000944										
+4_1011_539_263	avx2Groebner	0.000876										
+4_1011_539_263	avx2Groebner	0.000867										
+4_1011_539_263	avx2Groebner	0.000866										
+4_1011_539_263	avx2Groebner	0.000905	0.0008916									
+5_2362_1226_453	serialGroebner	0.027205										
+5_2362_1226_453	serialGroebner	0.027075										
+5_2362_1226_453	serialGroebner	0.026711										
+5_2362_1226_453	serialGroebner	0.027288										
+5_2362_1226_453	serialGroebner	0.028295	0.0273148									
+5_2362_1226_453	sseGroebner	0.008516										
+5_2362_1226_453	sseGroebner	0.008842										
+5_2362_1226_453	sseGroebner	0.008489										
+5_2362_1226_453	sseGroebner	0.008644										
+5_2362_1226_453	sseGroebner	0.008725	0.0086432									
+5_2362_1226_453	avx2Groebner	0.005314										
+5_2362_1226_453	avx2Groebner	0.005445										
+5_2362_1226_453	avx2Groebner	0.005457										
+5_2362_1226_453	avx2Groebner	0.005277										
+5_2362_1226_453	avx2Groebner	0.005194	0.0053374									
+6_3799_2759_1953	serialGroebner	0.463613										
+6_3799_2759_1953	serialGroebner	0.493254										
+6_3799_2759_1953	serialGroebner	0.468536										
+6_3799_2759_1953	serialGroebner	0.469825										
+6_3799_2759_1953	serialGroebner	0.458371	0.4707198									
+6_3799_2759_1953	sseGroebner	0.246222										
+6_3799_2759_1953	sseGroebner	0.243922										
+6_3799_2759_1953	sseGroebner	0.240556										
+6_3799_2759_1953	sseGroebner	0.239603										
+6_3799_2759_1953	sseGroebner	0.242722	0.242605									
+6_3799_2759_1953	avx2Groebner	0.143564										
+6_3799_2759_1953	avx2Groebner	0.161546										
+6_3799_2759_1953	avx2Groebner	0.152584										
+6_3799_2759_1953	avx2Groebner	0.145167										
+6_3799_2759_1953	avx2Groebner	0.153968	0.1513658									
+7_8399_6375_4535	serialGroebner	6.76326										
+7_8399_6375_4535	serialGroebner	7.09548										
+7_8399_6375_4535	serialGroebner	6.44										
+7_8399_6375_4535	serialGroebner	6.49792										
+7_8399_6375_4535	serialGroebner	6.56703	6.672738									
+7_8399_6375_4535	sseGroebner	4.62458										
+7_8399_6375_4535	sseGroebner	4.60472										
+7_8399_6375_4535	sseGroebner	4.69881										
+7_8399_6375_4535	sseGroebner	4.67103										
+7_8399_6375_4535	sseGroebner	4.72297	4.664422									
+7_8399_6375_4535	avx2Groebner	2.54412										
+7_8399_6375_4535	avx2Groebner	2.57308										
+7_8399_6375_4535	avx2Groebner	2.50631										
+7_8399_6375_4535	avx2Groebner	2.61167										
+7_8399_6375_4535	avx2Groebner	2.5616	2.559356									
+8_23045_18748_14325	serialGroebner	131.163										
+8_23045_18748_14325	serialGroebner	130.992										
+8_23045_18748_14325	serialGroebner	133.631										
+8_23045_18748_14325	serialGroebner	133.282										
+8_23045_18748_14325	serialGroebner	131.925	132.1986									
+8_23045_18748_14325	sseGroebner	71.5768										
+8_23045_18748_14325	sseGroebner	73.1476										
+8_23045_18748_14325	sseGroebner	72.8185										
+8_23045_18748_14325	sseGroebner	73.0085										
+8_23045_18748_14325	sseGroebner	72.027	72.51568									
+8_23045_18748_14325	avx2Groebner	44.8383										
+8_23045_18748_14325	avx2Groebner	44.551										
+8_23045_18748_14325	avx2Groebner	45.2501										
+8_23045_18748_14325	avx2Groebner	42.9697										
+8_23045_18748_14325	avx2Groebner	42.0909	43.94									
+9_37960_29304_14921	serialGroebner	312.634										
+9_37960_29304_14921	serialGroebner	315.853										
+9_37960_29304_14921	serialGroebner	314.513										
+9_37960_29304_14921	serialGroebner	316.362										
+9_37960_29304_14921	serialGroebner	311.775	314.2274									
+9_37960_29304_14921	sseGroebner	158.212										
+9_37960_29304_14921	sseGroebner	158.198										
+9_37960_29304_14921	sseGroebner	158.324										
+9_37960_29304_14921	sseGroebner	158.927										
+9_37960_29304_14921	sseGroebner	163.518	159.4358									
+9_37960_29304_14921	avx2Groebner	107.811										
+9_37960_29304_14921	avx2Groebner	108.714										
+9_37960_29304_14921	avx2Groebner	108.185										
+9_37960_29304_14921	avx2Groebner	108.933										
+9_37960_29304_14921	avx2Groebner	108.416	108.4118									
+10_43577_39477_54274	serialGroebner	1091.63										
+10_43577_39477_54274	serialGroebner	1081.38										
+10_43577_39477_54274	serialGroebner	1094.36										
+10_43577_39477_54274	serialGroebner	1097.33										
+10_43577_39477_54274	serialGroebner	1094.99	1091.938									
+10_43577_39477_54274	sseGroebner	676.277										
+10_43577_39477_54274	sseGroebner	685.635										
+10_43577_39477_54274	sseGroebner	676.658										
+10_43577_39477_54274	sseGroebner	666.933										
+10_43577_39477_54274	sseGroebner	678.34	676.7686									
+10_43577_39477_54274	avx2Groebner	524.929										
+10_43577_39477_54274	avx2Groebner	496.007										
+10_43577_39477_54274	avx2Groebner	503.741										
+10_43577_39477_54274	avx2Groebner	482.997										
+10_43577_39477_54274	avx2Groebner	511.711	503.877									
+11_85401_5724_756	avx2Groebner	0.31708										
+11_85401_5724_756	avx2Groebner	0.325739										
+11_85401_5724_756	avx2Groebner	0.301149										
+11_85401_5724_756	avx2Groebner	0.300918										
+11_85401_5724_756	avx2Groebner	0.309845	0.3109462									
+11_85401_5724_756	serialGroebner	1.72649										
+11_85401_5724_756	serialGroebner	1.7196										
+11_85401_5724_756	serialGroebner	1.73182										
+11_85401_5724_756	serialGroebner	1.7322										
+11_85401_5724_756	serialGroebner	1.72664	1.72735									
+11_85401_5724_756	sseGroebner	0.531256										
+11_85401_5724_756	sseGroebner	0.532311										
+11_85401_5724_756	sseGroebner	0.530554										
+11_85401_5724_756	sseGroebner	0.526297										
+11_85401_5724_756	sseGroebner	0.516082	0.5273									
+11_85401_5724_756	avx2Groebner	0.277368										
+11_85401_5724_756	avx2Groebner	0.299631										
+11_85401_5724_756	avx2Groebner	0.279238										
+11_85401_5724_756	avx2Groebner	0.276686										
+11_85401_5724_756	avx2Groebner	0.293216	0.2852278									
