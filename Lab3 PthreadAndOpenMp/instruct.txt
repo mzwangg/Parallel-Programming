@@ -1,0 +1,21 @@
+cd /mnt/c/Users/86152/source/repos/ParallelProgramming/Lab3_PthreadAndOpenMp
+
+g++ -pthread -fopenmp -march=native -o gauss gauss.cpp
+./gauss
+g++ -pthread -fopenmp -march=native -o groebner groebner.cpp
+./groebner
+
+arm-linux-gnueabihf-g++ -pthread -fopenmp -mcpu=cortex-a76 -o gauss gauss.cpp
+qemu-arm -L /usr/arm-linux-gnueabihf/ ./gauss
+arm-linux-gnueabihf-g++ -pthread -fopenmp -mcpu=cortex-a76 -o groebner groebner.cpp
+qemu-arm -L /usr/arm-linux-gnueabihf/ ./groebner
+
+g++ -pthread -fopenmp -march=native -DTIMING -o gauss gauss.cpp
+./gauss
+g++ -pthread -fopenmp -march=native -DTIMING -o groebner groebner.cpp
+./groebner
+
+g++ -O2 -pthread -fopenmp -march=native -DTIMING -o gauss gauss.cpp
+./gauss
+g++ -O2 -pthread -fopenmp -march=native -DTIMING -o groebner groebner.cpp
+./groebner
