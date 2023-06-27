@@ -61,7 +61,7 @@ void printMatrix(const char* name, float* mat, int m, int N)
     }
 }
 
-// return execution time
+//以一个元素为工作项进行GPU并行高斯消元
 double gpu_item_kernel(float* mat, int N, sycl::queue& q) {
     struct timeval start, end;
     gettimeofday(&start, NULL);
@@ -73,7 +73,7 @@ double gpu_item_kernel(float* mat, int N, sycl::queue& q) {
         mat[k * N + k] = 1;
 
         auto e = q.submit([&](sycl::handler& h) {
-            h.parallel_for(range<2>(N - k - 1, N - k - 1), [=](id<2> index) {
+            h.parallel_for(range<2>(N - k - 1, N - k - 1), [=](id<2> index) {//将工作项划分单个元素
                     int i = index[0] + k + 1;  // 第一个维度的循环变量
                     int j = index[1] + k + 1;  // 第二个维度的循环变量
                     mat[i * N + j] -= mat[k * N + j] * mat[i * N + k];
@@ -87,6 +87,7 @@ double gpu_item_kernel(float* mat, int N, sycl::queue& q) {
     return (end.tv_sec - start.tv_sec) * 1000.0 + (end.tv_usec - start.tv_usec) / 1000.0;
 }
 
+//以一个元素为工作项进行GPU并行高斯消元，并将全部进行GPU并行化
 double gpu_item_plus_kernel(float* mat, int N, sycl::queue& q) {
     struct timeval start, end;
     gettimeofday(&start, NULL);
@@ -95,7 +96,7 @@ double gpu_item_plus_kernel(float* mat, int N, sycl::queue& q) {
     {
         float pivot = mat[k * N + k];
         auto e1 = q.submit([&](sycl::handler& h) {
-            h.parallel_for(range<1>(N - k - 1), [=](id<1> i) {
+            h.parallel_for(range<1>(N - k - 1), [=](id<1> i) {//将工作项划分单个元素
                 mat[k * N + i + k + 1] /= pivot;
                 });
             });
@@ -103,7 +104,7 @@ double gpu_item_plus_kernel(float* mat, int N, sycl::queue& q) {
         mat[k * N + k] = 1;
 
         auto e2 = q.submit([&](sycl::handler& h) {
-            h.parallel_for(range<2>(N - k - 1, N - k - 1), [=](id<2> index) {
+            h.parallel_for(range<2>(N - k - 1, N - k - 1), [=](id<2> index) {//将工作项划分单个元素
                 int i = index[0] + k + 1;  // 第一个维度的循环变量
                 int j = index[1] + k + 1;  // 第二个维度的循环变量
                 mat[i * N + j] -= mat[k * N + j] * mat[i * N + k];
@@ -112,7 +113,7 @@ double gpu_item_plus_kernel(float* mat, int N, sycl::queue& q) {
         e2.wait();
 
         auto e3 = q.submit([&](sycl::handler& h) {
-            h.parallel_for(range<1>(N - k - 1), [=](id<1> i) {
+            h.parallel_for(range<1>(N - k - 1), [=](id<1> i) {//将工作项划分单个元素
                 mat[(i+k+1)*N+k] = 0;
                 });
             });
@@ -123,7 +124,7 @@ double gpu_item_plus_kernel(float* mat, int N, sycl::queue& q) {
     return (end.tv_sec - start.tv_sec) * 1000.0 + (end.tv_usec - start.tv_usec) / 1000.0;
 }
 
-// return execution time
+//以一行为工作项进行GPU并行高斯消元
 double gpu_line_kernel(float* mat, int N, sycl::queue& q) {
         struct timeval start, end;
         gettimeofday(&start, NULL);
@@ -135,9 +136,9 @@ double gpu_line_kernel(float* mat, int N, sycl::queue& q) {
             mat[k * N + k] = 1;
     
             auto e = q.submit([&](sycl::handler& h) {
-                h.parallel_for(range<1>(N - k - 1), [=](id<1> i) {
-                    float* row1 = mat + k * N;
-                    float* row2 = mat + (i + k + 1) * N;
+                h.parallel_for(range<1>(N - k - 1), [=](id<1> i) {//将工作项划分为长度为N的一维向量
+                    float* row1 = mat + k * N;//枢轴行
+                    float* row2 = mat + (i + k + 1) * N;//当前行
                     float pivot = row2[k];
                     for (int j = k + 1; j < N; ++j) {
                         row2[j] -= row1[j] * pivot;
@@ -152,7 +153,7 @@ double gpu_line_kernel(float* mat, int N, sycl::queue& q) {
         return (end.tv_sec - start.tv_sec) * 1000.0 + (end.tv_usec - start.tv_usec) / 1000.0;
 }
 
-// return execution time
+//以一个块为工作项进行GPU并行高斯消元
 double gpu_block_kernel(float* mat, int N, sycl::queue& q) {
         struct timeval start, end;
         gettimeofday(&start, NULL);
@@ -164,11 +165,11 @@ double gpu_block_kernel(float* mat, int N, sycl::queue& q) {
             mat[k * N + k] = 1;
     
             auto e = q.submit([&](sycl::handler& h) {
-                h.parallel_for(range<2>(N - k - 1,BLOCK), [=](id<2> index) {
-                    float* row1 = mat + k * N;
-                    float* row2 = mat + (index[0] + k + 1) * N;
+                h.parallel_for(range<2>(N - k - 1,BLOCK), [=](id<2> index) {//将工作项划分为1*N/BLOCK大小的块
+                    float* row1 = mat + k * N;//枢轴行
+                    float* row2 = mat + (index[0] + k + 1) * N;//当前行
                     float pivot = row2[k];
-                    for (int j = k + 1 +index[1]; j < N; j+=BLOCK) {
+                    for (int j = k + 1 +index[1]; j < N; j+=BLOCK) {//循环划分数据
                         row2[j] -= row1[j] * pivot;
                     }
                 });
@@ -207,6 +208,7 @@ double cpu_kernel(float* mat, int N) {
     return (end.tv_sec - start.tv_sec) * 1000.0 + (end.tv_usec - start.tv_usec) / 1000.0;
 }
 
+//比较答案是否正确
 void verify(float* mat, float* ans, int n) {
     int length = n * n;
     for (int i = 0; i < length; i++) {
@@ -290,8 +292,9 @@ void gemm(const int N, int iterations, sycl::queue& q) {
 
 int main() {
 
+    //将属性列增加enable_profiling属性，以测量时间
     auto propList = cl::sycl::property_list{ cl::sycl::property::queue::enable_profiling() };
-    queue my_gpu_queue(cl::sycl::cpu_selector_v, propList);
+    queue my_gpu_queue(cl::sycl::gpu_selector_v, propList);//生成gpu的队列
 
     //打印设备信息
     cout << "Select device: " << my_gpu_queue.get_device().get_info<info::device::name>() << "\n";
