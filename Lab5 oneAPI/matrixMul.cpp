@@ -154,7 +154,7 @@ int gemm(const int M,
         float duration = cpu_kernel(A, B, C_host, M, N, K);
         if (run >= warmup) duration_cpu += duration;
     }
-    duration_cpu = duration_cpu / iterations / 2;
+    duration_cpu = duration_cpu / (iterations / 2);
 
     // Compare the resutls of CPU and GPU 
     int errCode = 0;
